@@ -16,12 +16,16 @@
                 height="600px" width="600px"
                 />
         </pages>
-      
-    </Carousel>
+       </Carousel>
       
       <Button 
-        text="say hello" 
+        text="{i18n>showHelloButtonText}"
         press="onShowHello" 
       />
+      <Input
+        value="{helloPanel>/recipient/name}"
+        description="Hello {helloPanel>/recipient/name}"
+        valueLiveUpdate="true"
+        width="60%"/>
 
 </mvc:View>
