@@ -9,6 +9,15 @@
         "description": "{{appDescription}}",
         "applicationVersion": {
             "version": "1.0.0"
+        },
+        "dataSources": {
+            "ES5": {
+                "uri": "/destinations/ES5/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0"
+                }
+            }
         }
     },
     "sap.ui": {
@@ -29,7 +38,6 @@
             "viewName": "opensap.myapp.view.App",
             "type": "XML",
             "id": "app"
-           
         },
         "autoPrefixId": true,
         "dependencies": {
@@ -51,16 +59,24 @@
                 "type": "sap.ui.model.json.JSONModel",
                 "uri": "model/HelloPanel.json"
             },
+            "address": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "model/Address.json"
+                },
+            "": {
+                "dataSource": "ES5"
+            },
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                "bundleName": "opensap.myapp.i18n.i18n"
+                    "bundleName": "opensap.myapp.i18n.i18n"
                 }
-                }
+            }
         },
         "contentDensities": {
             "compact": true,
             "cozy": true
         }
+        
     }
 }
