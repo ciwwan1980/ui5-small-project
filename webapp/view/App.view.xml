@@ -84,7 +84,8 @@ icon="sap-icon://save"/>
                             </IconTabFilter>
                             <IconTabFilter
 text="{i18n>dataBindingFilter}" key="db">
-                               
+                                         <!-- <ToolbarSpacer />
+                  <SearchField id="searchField" width="auto" search=".onFilterPosts" />   -->
                                 <content>
                                     <List
 id="productsList"
