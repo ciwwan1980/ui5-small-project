@@ -84,12 +84,17 @@ icon="sap-icon://save"/>
                             </IconTabFilter>
                             <IconTabFilter
 text="{i18n>dataBindingFilter}" key="db">
-                                         <!-- <ToolbarSpacer />
+                                <!-- <ToolbarSpacer />
                   <SearchField id="searchField" width="auto" search=".onFilterPosts" />   -->
                                 <content>
-                                    <List
-id="productsList"
-items="{/ProductSet}">
+                                
+                                <List id="productsList" items="{
+path : '/ProductSet',
+sorter : {
+path : 'Category',
+group : true
+}
+}">
                                         <headerToolbar>
                                             <Toolbar>
                                                 <Title text="{i18n>productListTitle}"/>
@@ -98,7 +103,6 @@ items="{/ProductSet}">
                                             </Toolbar>
                                         </headerToolbar>
                                         <items>
-                                         
                                             <ObjectListItem
 title="{Name}"
 number="{Price}"
