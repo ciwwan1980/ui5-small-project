@@ -84,12 +84,20 @@ icon="sap-icon://save"/>
                             </IconTabFilter>
                             <IconTabFilter
 text="{i18n>dataBindingFilter}" key="db">
+                               
                                 <content>
                                     <List
-headerText="{i18n>productListTitle}"
-items="{/ProductSet}"
->
+id="productsList"
+items="{/ProductSet}">
+                                        <headerToolbar>
+                                            <Toolbar>
+                                                <Title text="{i18n>productListTitle}"/>
+                                                <ToolbarSpacer/>
+                                                <SearchField width="50%" search="onFilterProducts"/>
+                                            </Toolbar>
+                                        </headerToolbar>
                                         <items>
+                                         
                                             <ObjectListItem
 title="{Name}"
 number="{Price}"
@@ -97,12 +105,12 @@ numberState="{= ${Price} > 500 ? 'Error' : 'Success'}"
 intro="{ProductID}"
  >
 
+
 </ObjectListItem>
                                         </items>
                                     </List>
                                 </content>
                             </IconTabFilter>
-                            
                         </items>
                     </IconTabBar>
                 </content>
